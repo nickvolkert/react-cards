@@ -10,7 +10,31 @@ class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     friends
+    clickFriend: [];
+    clickCount: 0;
   };
+
+  //attempting shuffling
+  function shuffleArray(array) {
+    let i = array.length - 1;
+    for (; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  }
+
+  function clickFriend(){
+    clickCount++;
+    shuffle;
+    topscore
+    regularscore
+    
+
+  }
+
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
