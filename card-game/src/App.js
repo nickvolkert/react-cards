@@ -9,13 +9,13 @@ import "./App.css";
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    friends
-    clickFriend: [];
-    clickCount: 0;
+    friends,
+    clickCount: 0, //regularscore
+    topScore: 0
   };
 
   //attempting shuffling
-  function shuffleArray(array) {
+shuffleArray = (array) => {
     let i = array.length - 1;
     for (; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -26,13 +26,13 @@ class App extends Component {
     return array;
   }
 
-  function clickFriend(){
-    clickCount++;
-    shuffle;
-    topscore
-    regularscore
-    
-
+  clickFriend = () => {
+    this.setState({
+      clickCount: this.state.clickCount++
+    });
+    this.shuffleArray(this.state.friends);
+    return this.state.clickCount
+    console.log(this.state.clickCount)
   }
 
 
@@ -40,7 +40,10 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Nav />
+        <Nav
+          userclicks={this.state.clickCount}
+          topscore={this.state.topScore}
+        />
         <CardWrapper>
           {this.state.friends.map(friend => (
             <FriendCard
