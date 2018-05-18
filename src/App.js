@@ -4,7 +4,6 @@ import Wrapper from "./components/Wrapper";
 import Nav from './components/Nav';
 import CardWrapper from './components/CardWrapper';
 import friends from "./friends.json";
-import Shake from './components/Shake';
 import "./App.css";
 
 class App extends Component {
@@ -53,7 +52,6 @@ shuffleArray = (array) => {
               name={friend.name}
               clickFriend={this.clickFriend}
               image={friend.image}
-              Shake={Shake}
             />
           ))}
         </CardWrapper>
